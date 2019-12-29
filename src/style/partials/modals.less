@@ -1,0 +1,123 @@
+@import "./const.less";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(@color-black ,0.5);
+    }
+
+    &__content {
+        position: relative;
+        z-index: 11;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px 80px 60px;
+        background-color: @color-white;
+    }
+
+    &__title {
+        width: 100%;
+        margin-bottom: 40px;
+        color: @color-black;
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 30px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__field {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    &__field-info {
+        width: 100%;
+        height: 38px;
+        border: none;
+        border-bottom: 2px solid @color-black-haze;
+        color: @color-black;
+        opacity: 0.7;
+        font-family: "PT Sans";
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 26px;
+        font-style: normal;
+        outline: none;
+
+        &:focus, &:valid {
+            border-color: @color-burning-orange;
+            opacity: 1;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &__policy {
+        max-width: 335px;
+    }
+
+    &__link {
+        color: @color-black;
+    }
+
+    &__field-policy {
+        width: 20px;
+        height: 20px;
+        margin: 0 9px 0 0;
+    }
+
+    &__submit {
+        width: 200px;
+        height: 44px;
+        border: none;
+        border-radius: 50px;
+        background: @color-burning-orange;
+        color: @color-white;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 18px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        align-self: flex-start;
+        font-style: normal;
+    }
+
+    &__close {
+        position: absolute;
+        top: 0;
+        right: -45px;
+        width: 30px;
+        height: 30px;
+        background-image: url(../img/decor/cross.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+}

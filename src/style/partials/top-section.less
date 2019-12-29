@@ -1,27 +1,24 @@
-@import './const.less';
+@import "./const.less";
 
 .top-section {
     background-image: url(../img/top-bg.jpg);
     background-size: cover;
 
     &__container {
-        max-width: 1430px;
-        width: 100%;
-        margin: 0 auto;
-        padding: 295px 0 220px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        padding: 295px 0 220px;
     }
 
     &__title {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 55px;
-        line-height: 65px;
-        color: @color-white;
         max-width: 1020px;
         margin-bottom: 30px;
+        color: @color-white;
+        font-size: 55px;
+        font-weight: bold;
+        line-height: 65px;
+        font-style: normal;
 
         > span {
             color: @color-rich-electric-blue;
@@ -29,12 +26,12 @@
     }
 
     &__descr {
-        font-style: normal;
-        font-weight: 500;
-        font-size: 28px;
-        line-height: 33px;
-        color: @color-white;
         margin-bottom: 50px;
+        color: @color-white;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 33px;
+        font-style: normal;
 
         > span {
             color: @color-rich-electric-blue;
@@ -42,23 +39,23 @@
     }
 
     &__button {
-        padding: 20px 54px;
-        background: @color-rich-electric-blue;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
         z-index: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 54px;
+        border-radius: 50px;
+        background: @color-rich-electric-blue;
+        cursor: pointer;
 
         > span {
-            font-style: normal;
-            font-weight: 500;
-            font-size: 14px;
-            text-align: center;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
             color: @color-white;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-align: center;
+            text-transform: uppercase;
+            font-style: normal;
         }
     }
 
@@ -72,28 +69,4 @@
         height: 120%;
     }
 
-}
-
-.waves {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &__circle {
-        position: absolute;
-        border-radius: 50px;
-
-        &_m {
-            z-index: 1;
-            background-color: fadeOut(@color-rich-electric-blue, 80%);
-            animation: fadeOut 1.5s infinite linear;
-        }
-
-        &_s {
-            z-index: 2;
-            background-color: fadeOut(@color-rich-electric-blue, 60%);
-            animation: fadeOut 1.5s infinite linear;
-        }
-    }
 }

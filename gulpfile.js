@@ -2,7 +2,6 @@
 
 var gulp = require('gulp'),
     prefixer = require('gulp-autoprefixer'),
-    sourcemaps = require('gulp-sourcemaps'),
     less = require('gulp-less'),
     rigger = require('gulp-rigger'),
     cssmin = require('gulp-clean-css'),
@@ -55,19 +54,16 @@ gulp.task('html', function () {
 gulp.task('js', function () {
     return gulp.src(path.src.js) //Найдем наш main файл
         .pipe(rigger()) //Прогоним через rigger
-        .pipe(sourcemaps.init()) //Инициализируем sourcemap
-        .pipe(sourcemaps.write()) //Пропишем карты
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(reload({stream: true})); //И перезагрузим сервер
 });
 
 gulp.task('style', function () {
-    return gulp.src(path.src.style) //Выберем наш main.less
-        .pipe(sourcemaps.init()) //То же самое что и с js
+    return gulp
+        .src(path.src.style) //Выберем наш main.less
         .pipe(less()) //Скомпилируем
         .pipe(prefixer()) //Добавим вендорные префиксы
         .pipe(cssmin()) //Сожмем
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css)) //И в build
         .pipe(reload({stream: true}));
 });

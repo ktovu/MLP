@@ -1,0 +1,47 @@
+@import "./const.less";
+
+.brands-section {
+
+    &__container {
+        padding: 90px 0 100px;
+    }
+
+    &__title {
+        margin-bottom: 55px;
+        color: @color-dark-jungle-green;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 36px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__slider {
+        margin-bottom: 30px;
+
+        .slick-list {
+            border-right: 2px solid @color-black-haze;
+        }
+
+        .slick-track {
+            display: flex;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 2px solid @color-black-haze;
+        border-bottom: 2px solid @color-black-haze;
+        border-left: 2px solid @color-black-haze;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    &__img {
+        height: 100%;
+    }
+}

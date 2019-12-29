@@ -1,0 +1,61 @@
+@import "./const.less";
+
+.waves {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__circle {
+        position: absolute;
+        border-radius: 50px;
+
+        &_m {
+            z-index: 1;
+            background-color: fadeOut(@color-rich-electric-blue, 80%);
+            animation: fadeOut 1.5s infinite linear;
+        }
+
+        &_s {
+            z-index: 2;
+            background-color: fadeOut(@color-rich-electric-blue, 60%);
+            animation: fadeOut 1.5s infinite linear;
+        }
+    }
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1430px;
+    margin: 0 auto;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+[role="tablist"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > li {
+        width: 15px;
+        height: 15px;
+        margin: 0 10px;
+        border: 1px solid @color-licorice;
+        border-radius: 50%;
+        background-color: @color-white;
+        opacity: 0.3;
+        cursor: pointer;
+
+        &.slick-active {
+            border-color: @color-burning-orange;
+            background-color: @color-burning-orange;
+        }
+    }
+
+    button {
+        display: none;
+    }
+}

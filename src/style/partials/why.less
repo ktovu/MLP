@@ -1,0 +1,102 @@
+@import "./const.less";
+
+.why-section {
+
+    &__container {
+        padding: 90px 0 70px;
+        background-color: @color-white;
+    }
+
+    &__title {
+        max-width: 670px;
+        margin: 0 auto 50px;
+        color: @color-dark-jungle-green;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 39px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__descr {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__subtitle {
+        margin-bottom: 50px;
+        color: @color-dark-jungle-green;
+        font-size: 28px;
+        font-weight: normal;
+        line-height: 31px;
+        letter-spacing: 0.02em;
+        /* identical to box height, or 37px */
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__negative {
+
+        .reason {
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 7px;
+                left: 0;
+                width: 28px;
+                height: 8px;
+                background-image: url(../img/decor/negative.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+
+    &__positive {
+
+        .reason {
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 28px;
+                height: 28px;
+                background-image: url(../img/decor/positive.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+}
+
+.reason {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 70px;
+
+    &__title {
+        margin-bottom: 13px;
+        color: @color-vermilion;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+        font-style: normal;
+    }
+
+    &__descr {
+        max-width: 585px;
+        color: @color-tundora;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+        font-style: normal;
+    }
+}

@@ -1,0 +1,85 @@
+@import "./const.less";
+
+.utp-section {
+    background-image: url(../img/utp-bg.jpg);
+    background-size: cover;
+
+    &__container {
+        padding: 90px 0 100px;
+    }
+
+    &__title {
+        margin-bottom: 70px;
+        color: @color-white;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 36px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 450px;
+        margin-bottom: 70px;
+        color: @color-white;
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        font-style: normal;
+
+        > svg {
+            min-width: 70px;
+            margin-right: 35px;
+        }
+    }
+
+    &__button-block {
+        width: 100%;
+        max-width: max-content;
+        margin: 0 auto;
+    }
+
+    &__button {
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 54px;
+        border-radius: 50px;
+        background: @color-rich-electric-blue;
+        cursor: pointer;
+
+        > span {
+            color: @color-white;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-align: center;
+            text-transform: uppercase;
+            font-style: normal;
+        }
+    }
+
+    .waves__circle_m {
+        width: 110%;
+        height: 135%;
+    }
+
+    .waves__circle_s {
+        width: 105%;
+        height: 120%;
+    }
+}

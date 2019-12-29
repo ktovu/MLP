@@ -1,0 +1,53 @@
+@import "./const.less";
+
+.works {
+    background-color: @color-black-haze;
+
+    &__container {
+        padding: 90px 0 100px;
+    }
+
+    &__title {
+        margin-bottom: 50px;
+        color: @color-dark-jungle-green;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 39px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__slider {
+        margin-bottom: 30px;
+
+        .slick-track {
+            display: flex;
+        }
+    }
+
+    &__slide {
+        padding: 0 35px;
+        outline: none;
+    }
+
+    &__img-block {
+        margin-bottom: 24px;
+        overflow: hidden;
+    }
+
+    &__img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    &__slide-name {
+        color: @color-dark-jungle-green;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21px;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+}

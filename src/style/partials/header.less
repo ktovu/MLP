@@ -1,4 +1,4 @@
-@import './const.less';
+@import "./const.less";
 
 .header {
     position: absolute;
@@ -8,11 +8,11 @@
     background-color: transparent;
 
     &__container {
-        max-width: 1720px;
-        padding: 25px 0;
-        margin: 0 auto;
         display: flex;
         justify-content: space-between;
+        max-width: 1720px;
+        margin: 0 auto;
+        padding: 25px 0;
     }
 }
 
@@ -21,52 +21,53 @@
 
     &__url {
         display: block;
-        text-decoration: none;
         display: flex;
-        align-items: center;
         justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
         color: @color-white;
-        text-transform: uppercase;
-        font-weight: 600;
         font-size: 55px;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
     }
 
     &__img {
         width: 75px;
         height: 75px;
-        height: auto;
     }
 
     &__descr {
-        font-family: 'PT Sans';
-        font-style: normal;
-        font-weight: normal;
+        color: @color-white;
+        font-family: "PT Sans";
         font-size: 18px;
+        font-weight: normal;
         line-height: 23px;
         letter-spacing: 0.03em;
         text-transform: uppercase;
-        color: @color-white;
+        font-style: normal;
     }
 }
 
 .nav {
-    max-width: 756px;
     width: 100%;
+    max-width: 756px;
 
     &__item {
         position: relative;
 
         &::before {
             content: "";
-            display: block;
             position: absolute;
             bottom: -5px;
+            display: block;
             width: 0px;
             height: 3px;
             background-color: @color-vermilion;
         }
 
         &:hover {
+
             &::before {
                 width: 41px;
                 transition: width 0.2s ease-in-out;
@@ -85,22 +86,22 @@
     }
 
     &__link {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 21px;
-        text-align: center;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
         color: @color-white;
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+        text-align: center;
         text-decoration: none;
+        text-transform: uppercase;
+        font-style: normal;
     }
 }
 
 .tel {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
+    align-items: flex-start;
     padding: 34px 0;
 
     &__phone {
@@ -108,8 +109,9 @@
     }
 
     &__callback {
-        top: -20%;
         position: relative;
+        top: -20%;
+        cursor: pointer;
 
         .waves__circle_m {
             width: 140%;
@@ -123,14 +125,14 @@
     }
 
     &__icon {
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 45px;
         height: 45px;
-        background-color: @color-rich-electric-blue;
         border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
+        background-color: @color-rich-electric-blue;
     }
 
     &__svg {
@@ -140,13 +142,13 @@
     }
 
     &__link {
-        font-style: normal;
-        font-weight: 500;
+        color: @color-white;
         font-size: 18px;
+        font-weight: 500;
         line-height: 21px;
         letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: @color-white;
         text-decoration: none;
+        text-transform: uppercase;
+        font-style: normal;
     }
 }

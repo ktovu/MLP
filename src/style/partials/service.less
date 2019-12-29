@@ -1,0 +1,124 @@
+@import "./const.less";
+
+.service {
+    background-color: @color-white;
+
+    &__container {
+        padding: 90px 0 100px;
+    }
+
+    &__title {
+        margin-bottom: 52px;
+        color: @color-dark-jungle-green;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 36px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__filter {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    &__group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 450px;
+        padding: 26px 0;
+        background-color: @color-black-haze;
+        color: @color-dark-jungle-green;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &.active, &:hover{
+            background-color: @color-rich-electric-blue;
+            color: @color-white;
+
+            > .service__icon {
+                fill: @color-white;
+            }
+        }
+    }
+
+    &__icon {
+        width: 70px;
+        height: 70px;
+        margin-right: 30px;
+        fill: @color-dark-jungle-green;
+    }
+}
+
+.serve-slider {
+    margin-bottom: 30px;
+
+    &__paddings {
+        padding: 0 12.5px;
+        outline: none;
+    }
+
+    .slick-track {
+        display: flex;
+        height: 530px;
+    }
+
+
+    &__item {
+        width: 100%;
+        min-height: 506px;
+        background-color: @color-black-haze;
+        transition: box-shadow 0.3s ease-in-out;
+        cursor: pointer;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+
+        &:hover {
+            box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &__image-block {
+        overflow: hidden;
+    }
+
+    &__descr {
+        padding: 18px 17px 17px 14px;
+    }
+
+    &__title {
+        margin-bottom: 18px;
+        color: @color-dark-jungle-green;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21px;
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+    &__list-item {
+        position: relative;
+        margin-bottom: 5px;
+        padding-left: 30px;
+        color: @color-tundora;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+        font-style: normal;
+
+        &::before {
+            content: "-";
+            position: absolute;
+            top: 4px;
+            left: 13px;
+            line-height: 1;
+        }
+    }
+}
