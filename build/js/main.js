@@ -29,7 +29,30 @@ $('#brandsSlider').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
     swipe: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    responsive: [
+        {
+          breakpoint: 1480,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+    ]
 });
 
 $('#serviceHeat').slick({
@@ -41,7 +64,30 @@ $('#serviceHeat').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
     swipe: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    responsive: [
+        {
+          breakpoint: 1480,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3
+          }
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+    ]
 });
 
 $('#worksSlider').slick({
@@ -53,5 +99,22 @@ $('#worksSlider').slick({
     slidesToShow: 3,
     slidesToScroll: 3,
     swipe: true,
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    responsive: [
+        {
+          breakpoint: 980,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 700,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+    ]
 });

@@ -152,3 +152,48 @@
         font-style: normal;
     }
 }
+
+@media (max-width: 1800px) {
+
+    .logo__descr {
+        display: none;
+    }
+
+    .header__container {
+        padding-right: 20px;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 1480px) {
+
+    .logo__url {
+        font-size: 0;
+    }
+}
+
+@media (max-width: 1150px) {
+
+    .nav {
+        display: none;
+    }
+
+    .header__container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo__url {
+        font-size: 55px;
+    }
+
+    .logo__descr {
+        display: block;
+        text-align: center;
+    }
+
+    .tel {
+        align-items: center;
+    }
+}
