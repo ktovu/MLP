@@ -1,6 +1,17 @@
 /*
  * Custom
  */
+(function() {
+  const urlLoc = decodeURIComponent(window.location.href);
+  let titleId = 'none';
+
+  if(urlLoc.indexOf('?title=') == -1 ? false : true){
+    titleId = urlLoc.match(/\?title=([^&]*)/)[1];
+    let newTitle = titleId.replace(/_\|_/g, ' <span>').replace(/_!_/g, '</span> ').replace(/_/g, ' ');
+    newTitle = newTitle[0].toUpperCase() + newTitle.slice(1);
+    document.querySelector('#mainTitle').innerHTML = newTitle;
+  }
+}())
 
 $('.instmat-section__button, .utp-section__button, .top-section__button, .tel__callback').on('click', (e) => {
     const textButton = $(e.currentTarget).text().trim();
@@ -117,4 +128,24 @@ $('#worksSlider').slick({
           }
         }
     ]
+});
+
+$('.modal__form').on('submit', (e) => {
+  $.ajax({
+    url: '/post.php',
+    type: "POST",
+    dataType: "html",
+    data: $('.modal__form').serialize(),
+    success: function(response) {
+      // result = $.parseJSON(response);
+      // $().html(result);
+    },
+    error: function(response) { // Данные не отправлены
+      // result = $.parseJSON(response);
+      // $().html(result);
+    }
+  });
+  $('.modal').fadeOut();
+  $('.modal__form')[0].reset();
+  e.preventDefault();
 });
