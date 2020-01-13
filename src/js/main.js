@@ -13,7 +13,7 @@
   }
 }())
 
-$('.instmat-section__button, .utp-section__button, .top-section__button, .tel__callback').on('click', (e) => {
+$('.instmat-section__button, .utp-section__button, .top-section__button, .tel__callback, .serve-slider__item').on('click', (e) => {
     const textButton = $(e.currentTarget).text().trim();
     const titleForm = $('.modal__title');
     const buttonForm = $('.modal__submit');
@@ -30,6 +30,45 @@ $('.instmat-section__button, .utp-section__button, .top-section__button, .tel__c
         $('.modal').fadeOut();
     });
 });
+
+function addUpButtonLogic() {
+  $(document).on('scroll', (e) => {
+    const minHeight = 200;
+    if(window.pageYOffset > 200) {
+      $('.up-button').fadeIn();
+    } else {
+      $('.up-button').fadeOut();
+    }
+  });
+
+  $('.up-button').click(function(){
+    $('html, body').animate({scrollTop: 0}, 600);
+    return false;
+  });
+}
+
+function sendMessageAJAX() {
+  $('.modal__form').on('submit', (e) => {
+    $.ajax({
+      url: '/post.php',
+      type: "POST",
+      dataType: "html",
+      data: $('.modal__form').serialize(),
+      success: function(response) {
+        // result = $.parseJSON(response);
+        // $().html(result);
+      },
+      error: function(response) { // Данные не отправлены
+        // result = $.parseJSON(response);
+        // $().html(result);
+      }
+    });
+    $('.modal').fadeOut();
+    $('.modal__form')[0].reset();
+    e.preventDefault();
+  });
+}
+
 
 $('#brandsSlider').slick({
     dots: true,
@@ -130,22 +169,7 @@ $('#worksSlider').slick({
     ]
 });
 
-$('.modal__form').on('submit', (e) => {
-  $.ajax({
-    url: '/post.php',
-    type: "POST",
-    dataType: "html",
-    data: $('.modal__form').serialize(),
-    success: function(response) {
-      // result = $.parseJSON(response);
-      // $().html(result);
-    },
-    error: function(response) { // Данные не отправлены
-      // result = $.parseJSON(response);
-      // $().html(result);
-    }
-  });
-  $('.modal').fadeOut();
-  $('.modal__form')[0].reset();
-  e.preventDefault();
-});
+
+
+sendMessageAJAX();
+addUpButtonLogic();

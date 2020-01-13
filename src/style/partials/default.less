@@ -59,3 +59,38 @@
         display: none;
     }
 }
+
+.top-section__button, .utp-section__button, .instmat-section__button {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -150px;
+        left: -40px;
+        z-index: 1;
+        transform: rotate(45deg);
+        display: block;
+        width: 30px;
+        height: 300px;
+        margin-left: 60px;
+        background: #fff;
+        transition: all 0.1s;
+        animation-name: slideme;
+        animation-delay: 0.05s;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+    }
+}
+
+.up-button {
+    position: fixed;
+    right: 35px;
+    bottom: 25px;
+    display: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
