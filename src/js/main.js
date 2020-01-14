@@ -31,6 +31,62 @@ $('.instmat-section__button, .utp-section__button, .top-section__button, .tel__c
     });
 });
 
+function serviceTabs() {
+  let sliderId = '#serviceHeat';
+  function startSlider(){
+    $(sliderId).slick({
+      dots: true,
+      dotsClass: 'service__dots',
+      appendDots: '.service__dots',
+      arrows: false,
+      infinite: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      swipe: true,
+      adaptiveHeight: true,
+      responsive: [
+          {
+            breakpoint: 1480,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3
+            }
+          },
+          {
+            breakpoint: 1100,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+      ]
+    });
+  }
+
+  startSlider('sliderId');
+
+  $('.service__group').on('click', (e) => {
+    const $target = $(e.currentTarget);
+    const attr = $target.attr('data-slider');
+
+    $('.service__group').removeClass('active');
+    $target.addClass('active');
+    $('.serve-slider').hide();
+    $('.service__dots').html("");
+    $(sliderId).slick("unslick");
+    sliderId = `#${attr}`;
+    startSlider();
+    $(`#${attr}`).fadeIn();
+  });
+}
+
 function addUpButtonLogic() {
   $(document).on('scroll', (e) => {
     const minHeight = 200;
@@ -105,40 +161,40 @@ $('#brandsSlider').slick({
     ]
 });
 
-$('#serviceHeat').slick({
-    dots: true,
-    dotsClass: 'service__dots',
-    appendDots: '.service__dots',
-    arrows: false,
-    infinite: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    swipe: true,
-    adaptiveHeight: true,
-    responsive: [
-        {
-          breakpoint: 1480,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3
-          }
-        },
-        {
-          breakpoint: 1100,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-    ]
-});
+// $('#serviceHeat').slick({
+//     dots: true,
+//     dotsClass: 'service__dots',
+//     appendDots: '.service__dots',
+//     arrows: false,
+//     infinite: true,
+//     slidesToShow: 4,
+//     slidesToScroll: 4,
+//     swipe: true,
+//     adaptiveHeight: true,
+//     responsive: [
+//         {
+//           breakpoint: 1480,
+//           settings: {
+//             slidesToShow: 3,
+//             slidesToScroll: 3
+//           }
+//         },
+//         {
+//           breakpoint: 1100,
+//           settings: {
+//             slidesToShow: 2,
+//             slidesToScroll: 2
+//           }
+//         },
+//         {
+//           breakpoint: 600,
+//           settings: {
+//             slidesToShow: 1,
+//             slidesToScroll: 1
+//           }
+//         }
+//     ]
+// });
 
 $('#worksSlider').slick({
     dots: true,
@@ -170,6 +226,6 @@ $('#worksSlider').slick({
 });
 
 
-
+serviceTabs();
 sendMessageAJAX();
 addUpButtonLogic();
