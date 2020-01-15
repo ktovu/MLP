@@ -8,7 +8,7 @@
     }
 
     &__title {
-        margin-bottom: 50px;
+        margin: 0 auto 50px;
         color: @color-dark-jungle-green;
         font-size: 30px;
         font-weight: bold;
@@ -17,6 +17,11 @@
         text-align: center;
         text-transform: uppercase;
         font-style: normal;
+        max-width: 800px;
+
+        > span {
+            color: @color-rich-electric-blue;
+        }
     }
 
     &__content {
@@ -28,6 +33,16 @@
     &__item {
         width: 100%;
         max-width: 400px;
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+        cursor: pointer;
+        background-color: @color-white;
+        transition: box-shadow .3s ease-in-out;
+        box-shadow: 0 2px 6px rgba(0,0,0,.15);
+
+        &:hover {
+            box-shadow: 0 2px 18px rgba(0,0,0,.25);
+        }
     }
 
     &__block-img {
@@ -47,13 +62,14 @@
     }
 
     &__name {
-        margin-bottom: 50px;
         color: @color-dark-jungle-green;
         font-size: 18px;
         font-weight: 500;
         line-height: 21px;
         text-transform: uppercase;
         font-style: normal;
+        padding-left: 10px;
+
     }
 
     &__button-block {

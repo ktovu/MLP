@@ -23,6 +23,11 @@
         font-style: normal;
     }
 
+    &__wrapper {
+        display: flex;
+        width: 100%;
+    }
+
     &__descr {
         display: flex;
         flex-direction: column;
@@ -126,7 +131,10 @@
 
     .contacts__map {
         flex: auto;
-        height: 400px;
-        min-width: 100%;
+        width: 100%;
+    }
+
+    .contacts__wrapper {
+        flex-direction: column;
     }
 }

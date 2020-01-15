@@ -13,20 +13,28 @@
   }
 }())
 
-$('.instmat-section__button, .utp-section__button, .top-section__button, .tel__callback, .serve-slider__item').on('click', (e) => {
+$('.instmat-section__button, .utp-section__button, .top-section__button, .tel__callback, .serve-slider__item, .instmat-section__item').on('click', (e) => {
     const textButton = $(e.currentTarget).text().trim();
     const titleForm = $('.modal__title');
     const buttonForm = $('.modal__submit');
 
+    $('body').css('overflow', 'hidden')
+
     if(/Узнать/.test(textButton)){
         titleForm.text('Узнать стоимость');
         buttonForm.val('Узнать');
+    } else if($(e.currentTarget).hasClass('instmat-section__item')) {
+      titleForm.text('Бесплатный подбор оборудования');
+      buttonForm.val('подобрать');
     } else {
         titleForm.text('Записаться на замер');
         buttonForm.val('записаться');
     };
     $('.modal').fadeIn().removeAttr('css');
     $('.modal__close, .modal__bg').on('click', (e) => {
+        $('body').css('overflow', 'auto')
+        $('.modal__form')[0].reset();
+        $('.modal__success').hide();
         $('.modal').fadeOut();
     });
 });
@@ -119,8 +127,11 @@ function sendMessageAJAX() {
         // $().html(result);
       }
     });
-    $('.modal').fadeOut();
-    $('.modal__form')[0].reset();
+    $('.modal__content').fadeOut(400, () => {
+      $('.modal__success').fadeIn();
+      $('.modal__form')[0].reset();
+    });
+    // $('.modal').fadeOut();
     e.preventDefault();
   });
 }
