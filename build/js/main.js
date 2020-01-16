@@ -36,6 +36,7 @@ $('.instmat-section__button, .utp-section__button, .top-section__button, .tel__c
         $('.modal__form')[0].reset();
         $('.modal__success').hide();
         $('.modal').fadeOut();
+        $('.modal__content').show();
     });
 });
 
