@@ -35,8 +35,9 @@ $('.instmat-section__button, .utp-section__button, .top-section__button, .tel__c
         $('body').css('overflow', 'auto')
         $('.modal__form')[0].reset();
         $('.modal__success').hide();
-        $('.modal').fadeOut();
-        $('.modal__content').show();
+        $('.modal').fadeOut(400, () => {
+          $('.modal__content').show();
+        });
     });
 });
 
