@@ -30,23 +30,23 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 525px;
         padding: 70px 80px 60px;
         background-color: @color-white;
-        max-width: 525px;
         box-sizing: border-box;
     }
 
     &__success {
+        z-index: 11;
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-width: 525px;
         padding: 70px 80px 60px;
         background-color: @color-white;
-        max-width: 525px;
-        box-sizing: border-box;
-        z-index: 11;
         font-size: 26px;
         text-align: center;
+        box-sizing: border-box;
     }
 
     &__title {
@@ -139,13 +139,17 @@
 
 @media (max-width: 900px) {
 
-    .modal__form {
-        width: 100%;
-        box-sizing: border-box;
-    }
+    .modal {
 
-    .modal__close {
-        top: -45px;
-        right: 0;
+        &__form {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        &__close {
+            top: 5px;
+            right: 5px;
+            background-image: url(../img/decor/cross_black.png);
+        }
     }
 }

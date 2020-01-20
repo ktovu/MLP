@@ -32,7 +32,7 @@ $('.instmat-section__button, .utp-section__button, .top-section__button, .tel__c
     };
     $('.modal').fadeIn().removeAttr('css');
     $('.modal__close, .modal__bg').on('click', (e) => {
-        $('body').css('overflow', 'auto')
+        $('body').css('overflow', 'auto');
         $('.modal__form')[0].reset();
         $('.modal__success').hide();
         $('.modal').fadeOut(400, () => {
@@ -49,6 +49,8 @@ function serviceTabs() {
       dotsClass: 'service__dots',
       appendDots: '.service__dots',
       arrows: false,
+      centerMode: true,
+      centerPadding: '0px',
       infinite: true,
       slidesToShow: 4,
       slidesToScroll: 4,
@@ -131,9 +133,11 @@ function sendMessageAJAX() {
     });
     $('.modal__content').fadeOut(400, () => {
       $('.modal__success').fadeIn();
+      setTimeout(() => {
+        $('.modal__bg').click();
+      }, 3000)
       $('.modal__form')[0].reset();
     });
-    // $('.modal').fadeOut();
     e.preventDefault();
   });
 }
@@ -160,6 +164,7 @@ $('#brandsSlider').slick({
         {
           breakpoint: 1100,
           settings: {
+            dots: false,
             slidesToShow: 2,
             slidesToScroll: 2
           }
@@ -167,6 +172,7 @@ $('#brandsSlider').slick({
         {
           breakpoint: 600,
           settings: {
+            dots: false,
             slidesToShow: 1,
             slidesToScroll: 1
           }
